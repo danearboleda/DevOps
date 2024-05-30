@@ -3,7 +3,7 @@ name: Check README
 on:
   push:
     branches:
-      - main
+      - '*'
 
 jobs:
   check-readme:
