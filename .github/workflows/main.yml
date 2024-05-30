@@ -20,4 +20,4 @@ jobs:
       run: echo se esta analizando el repositorio
 
     - name: List files
-      run: ls -la
+      run: Get-ChildItem -Force
