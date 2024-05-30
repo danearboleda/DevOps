@@ -1,21 +1,23 @@
-name : Primer pipeline
+name: Java CI
 
 on:
-  pull_request:
-    branches: ["main"]
-
   push:
-    branches: ["main"]
+    branches:
+      - dane-arb
+  pull_request:
+    branches:
+      - dane-arb
 
 jobs:
   build:
-    runs-on: windows-lastest
+    runs-on: windows-latest
 
     steps:
-      - name: Revisión repositorio
-        run: echo esta ejecutando el entorno
+    - name: Revisión repositorio
+      run: echo esta ejecutando el entorno
 
-      - name: analisis repositorio
-        run: se esta analizando el repositorio
+    - name: análisis repositorio
+      run: echo se esta analizando el repositorio
 
-ls -la
+    - name: List files
+      run: ls -la
