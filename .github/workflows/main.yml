@@ -1,21 +1,24 @@
-name : Primer pipeline
+name: Check README
 
 on:
-  pull_request:
-    branches: ["main"]
-
   push:
-    branches: ["main"]
+    branches:
+      - main
 
 jobs:
-  build:
-    runs-on: windows-lastest
+  check-readme:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Revisión repositorio
-        run: echo esta ejecutando el entorno
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: analisis repositorio
-        run: se esta analizando el repositorio
+    - name: Check for README.md
+      run: |
+        if [ -f README.md ]; then
+          echo "README.md exists";
+        else
+          echo "README.md does not exist";
+          exit 1;
+        fi
 
-ls -la
